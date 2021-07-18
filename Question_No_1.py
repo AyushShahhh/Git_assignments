@@ -17,7 +17,9 @@ def bappyFizz(n):
         else:
             x = str(i)
             str1 += " "+x
-    print(str1)
+    temp = str1.split(' ')
+    temp.remove(temp[0])
+    return(temp)
 
 def testcase():
     flag = 0
@@ -31,13 +33,13 @@ def testcase():
         if flag == 1 and not 'Question no.1' in i:
             print("\nInput number: "+i)
             bappyFizz(int(i))
-
-print('1.Default Testcases\n2.Custom input')
-choice = int(input())
-if choice == 1:
-    testcase()
-elif choice == 2:
-    print("Enter an input string:")
-    bappyFizz(int(input()))
-else :
-    print("Invalid")
+def start():
+    print('1.Default Testcases\n2.Custom input')
+    choice = int(input())
+    if choice == 1:
+        testcase()
+    elif choice == 2:
+        print("Enter an input string:")
+        bappyFizz(int(input()))
+    else :
+        print("Invalid")
